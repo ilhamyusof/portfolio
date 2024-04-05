@@ -3,7 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico.png">
 
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,6 +26,124 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  *:focus,
+  *:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+  }
+
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #333333;
+    color: #ffffff;
+  }
+
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #CD201F;
+    color: #ffffff;
+  }
+    </style>
   </head>
   <body>
     <div class="container-fluid px-0">
@@ -27,7 +152,6 @@
         <div class="container-fluid">
           <!-- <a class="navbar-brand" href="https://ilhamyusof.github.io/portfolio/">
             <span class="material-icons-outlined me-1">important_devices</span>
-            Web Developer
           </a> -->
           <button
             type="button"
@@ -88,6 +212,36 @@
                   </a>
                 </div>
               </div>
+              <div class="d-grid gap-3 d-sm-flex justify-content-center">
+                <ul class="wrapper">
+                <li class="icon facebook">
+                  <span class="tooltip">Facebook</span>
+                  <span><i class="fab fa-facebook-f"></i></span>
+                </li>
+                
+                <li class="icon twitter">
+                  <span class="tooltip">Twitter</span>
+                  <span><i class="fab fa-twitter"></i></span>
+                </li>
+            
+                <li class="icon instagram">
+                  <span class="tooltip">Instagram</span>
+                  <span><i class="fab fa-instagram"></i></span>
+                </li>
+            
+                <li class="icon github">
+                  <span class="tooltip">Github</span>
+                  <span><i class="fab fa-github"></i></span>
+                </li>
+            
+                <li class="icon youtube">
+                  <span class="tooltip">Youtube</span>
+                  <span><i class="fab fa-youtube"></i></span>
+                </li>
+              </ul>
+              </div>
+              
+        
             </div>
             <div class="col-xl-5 col-xxl-6 justify-content-center">
               <img class="img-fluid rounded-3 my-5" src="images/hero.jpeg" alt="Hero Image">
@@ -157,6 +311,32 @@
           </div>
           <div class="container mb-5">
             <div class="row">
+              <div class="col-lg-4 mx-auto mb-5">
+                <div class="card h-100 shadow-lg border-0 bg-light">
+                  <img class="card-img-top" src="images/filament.png" alt="Project 1">
+                  <div class="card-body p-4">
+                    <h5 class="card-title mb-3">Physio Dashboard (Laravel Filament Project)</h5>
+                    <div class="mb-2">
+                      <div class="badge bg-primary rounded-pill">Laravel Filament</div>
+                      <div class="badge bg-primary rounded-pill">PHP</div>
+                      <div class="badge bg-primary rounded-pill">Javascript</div>
+                    </div>
+                    <p class="card-text">
+                      Admin dashboard developed using Laravel Filament.
+                    </p>
+                  </div>
+                  <div class="card-footer bg-transparent mb-3">
+                    <a
+                      class="btn btn-outline-primary btn-sm text-uppercase"
+                      href="https://admin.iytech.co/admin/login"
+                      target="_blank"
+                    >
+                      <span class="material-icons-outlined me-1">code</span>
+                      Source Code
+                    </a>
+                  </div>
+                </div>
+              </div>
               <div class="col-lg-4 mx-auto mb-5">
                 <div class="card h-100 shadow-lg border-0 bg-light">
                   <img class="card-img-top" src="images/newphysiomobile.png" alt="Project 1">
